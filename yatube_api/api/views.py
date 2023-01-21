@@ -57,7 +57,7 @@ class FollowViewSet(viewsets.ModelViewSet):
         IsAuthorOrReadOnly,
     )
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('=following__username',)
+    search_fields = ('following__username',)
 
     def get_queryset(self):
         user = self.request.user
